@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WorldMapComponent } from './world-map/world-map.component';
 
 const appRoutes:Routes = [
-  {path: "", component: BarChartComponent },
+  {path: "", component: WorldMapComponent },
   {path: "barchart", component: BarChartComponent },
   {path: "worldmap", component: WorldMapComponent }
 ]
