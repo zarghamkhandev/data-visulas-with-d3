@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public navbarCollapsed = true;
+
+  changeCollapse(){
+    this.navbarCollapsed = !this.navbarCollapsed
+  }
 
 }

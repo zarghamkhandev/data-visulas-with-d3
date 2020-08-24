@@ -1,37 +1,45 @@
 <div class="container-fluid h-100 p-0 d-flex flex-column">
   <nav class="navbar navbar-light bg-white shadow-sm header py-0">
+    <button class="navbar-toggler d-sm-none" (click)="changeCollapse()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <a routerLink="/">
-      <img src="assets/d3logo.svg" alt="logo" class="logo" />
+      <img src="assets/d3logo.svg" alt="logo" class="logo ml-2" />
     </a>
     <ul
       class="title d-flex my-0 pl-0 py-2 align-items-center justify-content-center"
     >
-      <h3 class="text-muted mb-0">Data Visualisation with D3js</h3>
+      <h3 class="text-muted mb-0 heading">Data Visualisation with D3js</h3>
     </ul>
   </nav>
-  <div class="container-fluid flex-grow-1">
-    <div class="row h-100">
-      <div class="col-2 sidebar px-0 shadow-lg">
-        <div class="list-group list-group-flush" >
+  <div
+    class="container-fluid flex-grow-1"
+    style="background-color: rgb(240, 238, 238);"
+  >
+    <div class="row sidebar-container">
+      <div
+        class="col-12 col-sm-2 sidebar px-0"
+        [ngClass]="{ 'd-none d-sm-block ': navbarCollapsed }"
+      >
+        <ul class="list-group list-group-flush">
           <a
             routerLink="/worldmap"
-            routerLinkActive="active"
-            class="list-group-item list-group-item-action list-group-item-white"
+            [routerLinkActive]="['active']"
+            class="list-group-item list-group-item-action list-group-item-white text-center text-sm-left"
             >COVID-19 Map</a
           >
           <a
             routerLink="/barchart"
             routerLinkActive="active"
-            class="list-group-item list-group-item-action list-group-item-white"
+            class="list-group-item list-group-item-action list-group-item-white text-center text-sm-left"
             >Bar Chart</a
           >
-        </div>
+        </ul>
       </div>
-      <div class="col-10 px-0 ">
+      <div class="col-12 col-sm-10 px-0">
         <div class="main h-100">
           <router-outlet class="h-100"></router-outlet>
         </div>
-        
       </div>
     </div>
   </div>
