@@ -26,3 +26,9 @@ body {
 .chart #d3 svg{
   border-radius: 5px;
 }
+
+.svg-country{cursor: pointer;}
+
+.svg-country:hover {
+  fill: rgb(230, 120, 120);
+}

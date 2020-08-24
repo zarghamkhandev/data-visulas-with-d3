@@ -67,7 +67,10 @@ export class WorldMapComponent implements OnInit {
     paths
       .enter()
       .append('path')
+      .attr("class","svg-country")
       .attr('d', (d) => pathGenerator(d))
-      .attr('fill', (d) => colorScale(d.properties.ScaledValue));
+      .attr('fill', (d) => colorScale(d.properties.ScaledValue))
+      .append("title")
+      .text(d=>(`${d.properties.name} | Total Cases: ${d.properties.TotalCases}`));
   }
 }
