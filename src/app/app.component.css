@@ -1,0 +1,25 @@
+.header {
+  z-index: 10;
+}
+
+.logo {
+  height: 60px;
+}
+.title {
+  flex: 1 1 auto;
+}
+
+.sidebar {
+  background: white;
+}
+
+.active {
+  background: #f1f2f6;
+  color:#495057;
+  box-shadow: inset -1px 0 15px -10px rgba(0, 0, 0, .6);  
+  border: none;
+}
+.main {
+  background-color: rgb(240, 238, 238)
+}
+
