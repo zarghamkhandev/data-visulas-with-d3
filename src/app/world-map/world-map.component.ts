@@ -17,7 +17,7 @@ export class WorldMapComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.dataService
-      .getData('../../assets/worldmapdata.json')
+      .getData('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json')
       .subscribe((res) => {
         const tempdata = feature(res, res.objects.countries);
         tempdata.features.map((item) => {
@@ -63,7 +63,9 @@ export class WorldMapComponent implements OnInit {
         ["#fff5f0","#fee3d6","#fdc9b4","#fcaa8e","#fc8a6b","#f9694c","#ef4533","#d92723","#bb151a","#970b13","#67000d"]
       );
     svg.attr('viewBox', '0 0 961 500');
-    const paths = svg.selectAll('path').data(data.features);
+    const g = svg.append("g");
+
+    const paths = g.selectAll('path').data(data.features);
     paths
       .enter()
       .append('path')
@@ -72,5 +74,9 @@ export class WorldMapComponent implements OnInit {
       .attr('fill', (d) => colorScale(d.properties.ScaledValue))
       .append("title")
       .text(d=>(`${d.properties.name} | Total Cases: ${d.properties.TotalCases}`));
+
+    svg.call(d3.zoom().on("zoom",()=>{
+      g.attr("transform",d3.event.transform)
+    }))
   }
 }
