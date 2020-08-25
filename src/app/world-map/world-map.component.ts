@@ -17,7 +17,7 @@ export class WorldMapComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.dataService
-      .getData('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json')
+      .getData('../../assets/worldmapdata.json')
       .subscribe((res) => {
         const tempdata = feature(res, res.objects.countries);
         tempdata.features.map((item) => {
