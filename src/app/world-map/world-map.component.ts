@@ -3,7 +3,7 @@ import { DataService } from '../services/data.service';
 import { CoronaService } from '../services/corona.service';
 import { feature } from 'topojson-client';
 import * as d3 from 'd3';
-import { fromEventPattern } from 'rxjs';
+
 
 @Component({
   selector: 'app-world-map',
@@ -51,7 +51,6 @@ export class WorldMapComponent implements OnInit {
 
   createChart() {
     const data = this.topoData;
-    console.log(data)
 
     const pathGenerator = d3.geoPath().projection(d3.geoMercator());
     const container = this.worldMapContainer.nativeElement;
