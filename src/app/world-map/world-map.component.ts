@@ -79,4 +79,8 @@ export class WorldMapComponent implements OnInit {
       g.attr("transform",d3.event.transform)
     }))
   }
+
+  createLegend(){
+    
+  }
 }
